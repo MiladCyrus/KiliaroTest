@@ -70,11 +70,19 @@ class MainViewController: UIViewController, MainDisplayLogic
   {
     super.viewDidLoad()
     doSomething()
+      
+      let layout: UICollectionViewFlowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+      layout.sectionInset = UIEdgeInsets(top: 0, left: spaceBeweenColumns, bottom: 0, right: spaceBeweenColumns)
+      layout.minimumLineSpacing = spaceBeweenColumns
   }
   
   // MARK: Do something
   
-  //@IBOutlet weak var nameTextField: UITextField!
+    let spaceBeweenColumns = 4.0
+    let totalColumns = 3.0
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
   
   func doSomething()
   {
@@ -86,4 +94,22 @@ class MainViewController: UIViewController, MainDisplayLogic
   {
     //nameTextField.text = viewModel.name
   }
+}
+
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 34
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "CellId", for: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        
+        let totalSpace = (totalColumns + 1.0) * spaceBeweenColumns
+        let width = ((collectionView.bounds.width - totalSpace) / totalColumns )
+        return CGSize(width: width, height: width)
+    }
 }
