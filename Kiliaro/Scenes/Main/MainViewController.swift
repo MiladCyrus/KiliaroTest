@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import Hero
 
 protocol MainDisplayLogic: class
 {
@@ -76,6 +77,15 @@ class MainViewController: UIViewController, MainDisplayLogic
       layout.minimumLineSpacing = spaceBeweenColumns
   }
   
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let cells = collectionView.visibleCells
+        cells.forEach({cell in
+            let imageCell = cell as! ImageCell
+            imageCell.image.hero.id = ""
+        })
+    }
   // MARK: Do something
   
     let spaceBeweenColumns = 4.0
@@ -111,5 +121,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let totalSpace = (totalColumns + 1.0) * spaceBeweenColumns
         let width = ((collectionView.bounds.width - totalSpace) / totalColumns )
         return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! ImageCell
+        cell.image.hero.id = "1"
+        router?.routToFullScreen()
     }
 }

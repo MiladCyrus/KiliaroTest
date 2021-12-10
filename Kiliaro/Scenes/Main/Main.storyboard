@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t9N-2m-EL7">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Test album-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="MainViewController" customModule="Kiliaro" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,14 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mby-R7-L98">
-                                <rect key="frame" x="16" y="60" width="73.666666666666671" height="37"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ua4-0P-wUi">
-                                <rect key="frame" x="0.0" y="113" width="390" height="697"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ua4-0P-wUi">
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="428" id="BU4-p1-8iC"/>
@@ -44,6 +39,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zgP-WE-MqM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <color key="backgroundColor" name="AccentColor"/>
+                                                </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMz-zM-skj">
                                                     <rect key="frame" x="0.0" y="108" width="128" height="20"/>
                                                     <subviews>
@@ -66,11 +65,18 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="OMz-zM-skj" secondAttribute="trailing" id="0nw-rd-Bco"/>
+                                                <constraint firstItem="zgP-WE-MqM" firstAttribute="top" secondItem="LzK-ZH-mTI" secondAttribute="top" id="6vh-Et-pdn"/>
                                                 <constraint firstItem="OMz-zM-skj" firstAttribute="leading" secondItem="LzK-ZH-mTI" secondAttribute="leading" id="C9n-no-Dfw"/>
                                                 <constraint firstAttribute="bottom" secondItem="OMz-zM-skj" secondAttribute="bottom" id="Fqg-Ll-z5k"/>
+                                                <constraint firstAttribute="bottom" secondItem="zgP-WE-MqM" secondAttribute="bottom" id="MpD-kW-2zU"/>
+                                                <constraint firstItem="zgP-WE-MqM" firstAttribute="leading" secondItem="LzK-ZH-mTI" secondAttribute="leading" id="cDN-NV-5mg"/>
+                                                <constraint firstAttribute="trailing" secondItem="zgP-WE-MqM" secondAttribute="trailing" id="pgj-7p-6aS"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="linkColor"/>
+                                        <connections>
+                                            <outlet property="image" destination="zgP-WE-MqM" id="k4R-cS-P7G"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -84,23 +90,51 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="ua4-0P-wUi" secondAttribute="trailing" priority="750" id="3dI-f8-gUH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ua4-0P-wUi" secondAttribute="bottom" id="Gd1-TA-HaW"/>
-                            <constraint firstItem="ua4-0P-wUi" firstAttribute="top" secondItem="Mby-R7-L98" secondAttribute="bottom" constant="16" id="GyB-df-vFq"/>
+                            <constraint firstItem="ua4-0P-wUi" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="IR9-Hh-GmC"/>
                             <constraint firstItem="ua4-0P-wUi" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Tc2-xe-8DO"/>
                             <constraint firstItem="ua4-0P-wUi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="leading" priority="750" id="oaH-yN-6Ek"/>
-                            <constraint firstItem="Mby-R7-L98" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="vYX-zI-iFp"/>
-                            <constraint firstItem="Mby-R7-L98" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="xWI-j2-tHV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Test album" largeTitleDisplayMode="always" id="9In-po-p4k"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="collectionView" destination="ua4-0P-wUi" id="GeV-w8-MmH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135.38461538461539" y="124.40758293838861"/>
+            <point key="canvasLocation" x="867.69230769230762" y="123.69668246445497"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KAy-Bq-iHs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t9N-2m-EL7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Ps6-QK-uFE">
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="heroNavigationAnimationTypeString" value="fade"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Bpb-nv-XwD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHe-2U-5oG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71" y="117"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

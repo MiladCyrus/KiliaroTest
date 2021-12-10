@@ -14,7 +14,7 @@ import UIKit
 
 @objc protocol MainRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+  func routToFullScreen()
 }
 
 protocol MainDataPassing
@@ -29,32 +29,24 @@ class MainRouter: NSObject, MainRoutingLogic, MainDataPassing
   
   // MARK: Routing
   
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: MainViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: MainDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    func routToFullScreen() {
+        let storyboard = UIStoryboard(name: "FullScreenImage", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "FullScreenImageViewController") as! FullScreenImageViewController
+        var destinationDS = destinationVC.router!.dataStore!
+        passDataToFullScreen(source: dataStore!, destination: &destinationDS)
+        navigateToFullScreen(source: viewController!, destination: destinationVC)
+    }
+    
+    func navigateToFullScreen(source: MainViewController, destination: FullScreenImageViewController)
+    {
+        source.show(destination, sender: nil)
+        //source.present(destination, animated: true, completion: nil)
+        
+    }
+    
+    func passDataToFullScreen(source: MainDataStore, destination: inout FullScreenImageDataStore)
+    {
+        destination.name = source.name
+    }
+    
 }

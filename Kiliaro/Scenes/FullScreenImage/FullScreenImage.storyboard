@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Full Screen Image View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="FullScreenImageViewController" id="Y6W-OH-hqX" customClass="FullScreenImageViewController" customModule="Kiliaro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo5-0T-L03">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="1"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohC-qF-Plg">
+                                <rect key="frame" x="0.0" y="822" width="414" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created_at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eJ-1I-WKb">
+                                        <rect key="frame" x="8" y="0.0" width="398" height="40"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5eJ-1I-WKb" secondAttribute="trailing" constant="8" id="Oh5-GC-psL"/>
+                                    <constraint firstAttribute="bottom" secondItem="5eJ-1I-WKb" secondAttribute="bottom" id="bPG-Le-OEX"/>
+                                    <constraint firstItem="5eJ-1I-WKb" firstAttribute="leading" secondItem="ohC-qF-Plg" secondAttribute="leading" constant="8" id="fZt-1r-EGh"/>
+                                    <constraint firstAttribute="height" constant="40" id="uqj-qP-THy"/>
+                                    <constraint firstItem="5eJ-1I-WKb" firstAttribute="top" secondItem="ohC-qF-Plg" secondAttribute="top" id="wqB-eC-ejt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bo5-0T-L03" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="DeE-vO-v3E"/>
+                            <constraint firstItem="bo5-0T-L03" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="HRt-ND-58B"/>
+                            <constraint firstItem="bo5-0T-L03" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Y6L-Cl-pHA"/>
+                            <constraint firstItem="ohC-qF-Plg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gQu-rM-N3N"/>
+                            <constraint firstItem="bo5-0T-L03" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iyM-7f-6Qp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ohC-qF-Plg" secondAttribute="trailing" id="mSH-kv-6Wr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ohC-qF-Plg" secondAttribute="bottom" id="uJ5-2c-RCj"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="106"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -19,14 +19,14 @@ protocol MainBusinessLogic
 
 protocol MainDataStore
 {
-  //var name: String { get set }
+  var name: String { get set }
 }
 
 class MainInteractor: MainBusinessLogic, MainDataStore
 {
   var presenter: MainPresentationLogic?
   var worker: MainWorker?
-  //var name: String = ""
+  var name: String = ""
   
   // MARK: Do something
   

@@ -9,10 +9,12 @@ import UIKit
 
 class ImageCell: UICollectionViewCell {
     
+    @IBOutlet weak var image: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.clipsToBounds = true
-        self.layer.cornerRadius = 8
+        self.layer.cornerRadius = 4
     }
 }
