@@ -37,12 +37,38 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellId" id="RHw-25-d1c">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellId" id="RHw-25-d1c" customClass="ImageCell" customModule="Kiliaro" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LzK-ZH-mTI">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMz-zM-skj">
+                                                    <rect key="frame" x="0.0" y="108" width="128" height="20"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQk-7y-eVa">
+                                                            <rect key="frame" x="8" y="0.0" width="112" height="20"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="gQk-7y-eVa" secondAttribute="trailing" constant="8" id="420-Ew-uLH"/>
+                                                        <constraint firstItem="gQk-7y-eVa" firstAttribute="leading" secondItem="OMz-zM-skj" secondAttribute="leading" constant="8" id="8DX-Zg-KJ3"/>
+                                                        <constraint firstAttribute="height" constant="20" id="ROt-RD-xym"/>
+                                                        <constraint firstAttribute="bottom" secondItem="gQk-7y-eVa" secondAttribute="bottom" id="Tom-rB-qhT"/>
+                                                        <constraint firstItem="gQk-7y-eVa" firstAttribute="top" secondItem="OMz-zM-skj" secondAttribute="top" id="czl-iI-QTH"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="OMz-zM-skj" secondAttribute="trailing" id="0nw-rd-Bco"/>
+                                                <constraint firstItem="OMz-zM-skj" firstAttribute="leading" secondItem="LzK-ZH-mTI" secondAttribute="leading" id="C9n-no-Dfw"/>
+                                                <constraint firstAttribute="bottom" secondItem="OMz-zM-skj" secondAttribute="bottom" id="Fqg-Ll-z5k"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                     </collectionViewCell>
@@ -71,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
+            <point key="canvasLocation" x="135.38461538461539" y="124.40758293838861"/>
         </scene>
     </scenes>
     <resources>
