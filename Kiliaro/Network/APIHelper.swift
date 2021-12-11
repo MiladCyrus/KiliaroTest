@@ -7,11 +7,15 @@
 
 import Foundation
 
-
+struct Pagination {
+    let offset: Int
+    let limit: Int
+}
 struct APIHelper {
-    func makeGetRequest(uri: String = "", tryCounter: Int? = nil, completionHandler: @escaping (Data) -> Void) {
+    func makeGetRequest(uri: String = "", pagination: Pagination? = nil, tryCounter: Int? = nil, completionHandler: @escaping (Data) -> Void) {
         
-        let request = NSMutableURLRequest(url: URL(string: BaseUrl.getBaseUrl() + uri)!)
+        let parameters = self.makeParameters(param: pagination)
+        let request = NSMutableURLRequest(url: URL(string: BaseUrl.getBaseUrl() + uri + parameters)!)
         request.httpMethod = "GET"
         
         
@@ -49,5 +53,13 @@ struct APIHelper {
         dataTask.resume()
     }
     
-
+    func makeParameters(param: Pagination?) -> String {
+        guard let param = param else {
+            return ""
+        }
+        
+        let paramString = "?offset=\(param.offset)&limit=\(param.limit)"
+        return paramString
+        
+    }
 }
