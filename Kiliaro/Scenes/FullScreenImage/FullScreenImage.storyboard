@@ -82,6 +82,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="activityView" destination="jho-0r-ePt" id="ATM-cN-04d"/>
+                        <outlet property="dateLabel" destination="5eJ-1I-WKb" id="TiQ-rQ-E03"/>
                         <outlet property="image" destination="bo5-0T-L03" id="EhH-0i-m1P"/>
                         <outlet property="scrollView" destination="wv2-c3-Rsv" id="8jH-xD-FU3"/>
                     </connections>
