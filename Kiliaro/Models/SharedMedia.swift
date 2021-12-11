@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - SharedMedia
 struct SharedMedia: Codable {
@@ -24,6 +25,7 @@ struct SharedMedia: Codable {
     let downloadUrl: String
     let resx: Int
     let resy: Int
+    var placeHolderImage: UIImage?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"

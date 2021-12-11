@@ -47,6 +47,7 @@ class MainRouter: NSObject, MainRoutingLogic, MainDataPassing
     func passDataToFullScreen(source: MainDataStore, destination: inout FullScreenImageDataStore)
     {
         destination.media = source.media
+        destination.placeHolder = source.placeHolder
     }
     
 }

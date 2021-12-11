@@ -43,13 +43,18 @@
                                     <constraint firstItem="5eJ-1I-WKb" firstAttribute="top" secondItem="ohC-qF-Plg" secondAttribute="top" id="wqB-eC-ejt"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jho-0r-ePt">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bo5-0T-L03" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="DeE-vO-v3E"/>
                             <constraint firstItem="bo5-0T-L03" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="HRt-ND-58B"/>
+                            <constraint firstItem="jho-0r-ePt" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="PiR-sZ-rML"/>
                             <constraint firstItem="bo5-0T-L03" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Y6L-Cl-pHA"/>
+                            <constraint firstItem="jho-0r-ePt" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eYk-E4-hgR"/>
                             <constraint firstItem="ohC-qF-Plg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gQu-rM-N3N"/>
                             <constraint firstItem="bo5-0T-L03" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iyM-7f-6Qp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ohC-qF-Plg" secondAttribute="trailing" id="mSH-kv-6Wr"/>
@@ -60,6 +65,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="activityView" destination="jho-0r-ePt" id="ATM-cN-04d"/>
                         <outlet property="image" destination="bo5-0T-L03" id="EhH-0i-m1P"/>
                     </connections>
                 </viewController>

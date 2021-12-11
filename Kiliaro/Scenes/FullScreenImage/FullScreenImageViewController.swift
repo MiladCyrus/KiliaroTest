@@ -92,10 +92,14 @@ class FullScreenImageViewController: UIViewController, FullScreenImageDisplayLog
   // MARK: Do something
   
     @IBOutlet weak var image: UIImageView!
-  
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
+    
     func setupUI() {
         guard let media = router?.dataStore?.media else { fatalError()}
-        self.image.sd_setImage(with: URL(string: media.thumbnailUrl)!, placeholderImage: nil, completed: nil)
+        guard let placeHolder = router?.dataStore?.placeHolder else { fatalError()}
+        self.image.sd_setImage(with: URL(string: media.thumbnailUrl)!, placeholderImage: placeHolder, completed: {[weak self] _,_,_,_ in
+            self?.activityView.stopAnimating()
+        })
     }
   
   func displaySomething(viewModel: FullScreenImage.Something.ViewModel)

@@ -14,28 +14,30 @@ import UIKit
 
 protocol FullScreenImageBusinessLogic
 {
-  func doSomething(request: FullScreenImage.Something.Request)
+    func doSomething(request: FullScreenImage.Something.Request)
 }
 
 protocol FullScreenImageDataStore
 {
-  var media: SharedMedia? { get set }
+    var media: SharedMedia? { get set }
+    var placeHolder: UIImage? { get set }
 }
 
 class FullScreenImageInteractor: FullScreenImageBusinessLogic, FullScreenImageDataStore
 {
-  var presenter: FullScreenImagePresentationLogic?
-  var worker: FullScreenImageWorker?
-  var media: SharedMedia?
+    var presenter: FullScreenImagePresentationLogic?
+    var worker: FullScreenImageWorker?
+    var media: SharedMedia?
+    var placeHolder: UIImage?
     
-  // MARK: Do something
-  
-  func doSomething(request: FullScreenImage.Something.Request)
-  {
-    worker = FullScreenImageWorker()
-    worker?.doSomeWork()
+    // MARK: Do something
     
-    let response = FullScreenImage.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    func doSomething(request: FullScreenImage.Something.Request)
+    {
+        worker = FullScreenImageWorker()
+        worker?.doSomeWork()
+        
+        let response = FullScreenImage.Something.Response()
+        presenter?.presentSomething(response: response)
+    }
 }
