@@ -17,7 +17,7 @@ class ImageCell: UICollectionViewCell {
         super.awakeFromNib()
         
         self.clipsToBounds = true
-        self.layer.cornerRadius = 4
+        //self.layer.cornerRadius = 4
     }
     
     func config(media: SharedMedia) {

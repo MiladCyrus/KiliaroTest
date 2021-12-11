@@ -138,7 +138,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ImageCell
-        cell.image.hero.id = "1"
+        cell.image.hero.id = "heroImageId"
         let placeHolderImgae = cell.image.image
         let media = sharedMedias[indexPath.row]
         interactor?.setDataStore(media: media, placeHolder: placeHolderImgae)

@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="1"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="heroImageId"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
@@ -72,11 +72,11 @@
                         <constraints>
                             <constraint firstItem="HF1-y8-ETh" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.3" id="49K-V1-lia"/>
                             <constraint firstItem="ohC-qF-Plg" firstAttribute="bottom" secondItem="pCy-B3-U5s" secondAttribute="bottom" id="EbT-AW-cSf"/>
-                            <constraint firstItem="HF1-y8-ETh" firstAttribute="leading" secondItem="pCy-B3-U5s" secondAttribute="leading" id="GKS-vk-a5U"/>
+                            <constraint firstItem="HF1-y8-ETh" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="GKS-vk-a5U"/>
                             <constraint firstItem="wv2-c3-Rsv" firstAttribute="top" secondItem="pCy-B3-U5s" secondAttribute="top" id="Ql9-st-7jf"/>
                             <constraint firstItem="ohC-qF-Plg" firstAttribute="trailing" secondItem="pCy-B3-U5s" secondAttribute="trailing" id="U9z-CO-nr8"/>
                             <constraint firstItem="ohC-qF-Plg" firstAttribute="leading" secondItem="pCy-B3-U5s" secondAttribute="leading" id="WaZ-PF-mk6"/>
-                            <constraint firstItem="HF1-y8-ETh" firstAttribute="trailing" secondItem="pCy-B3-U5s" secondAttribute="trailing" id="Wbq-Oj-BZW"/>
+                            <constraint firstItem="HF1-y8-ETh" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="Wbq-Oj-BZW"/>
                             <constraint firstItem="jho-0r-ePt" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="dIw-Iq-Lcc"/>
                             <constraint firstItem="wv2-c3-Rsv" firstAttribute="bottom" secondItem="pCy-B3-U5s" secondAttribute="bottom" id="ila-dG-pmV"/>
                             <constraint firstItem="wv2-c3-Rsv" firstAttribute="leading" secondItem="pCy-B3-U5s" secondAttribute="leading" id="n8V-Yc-uCl"/>
