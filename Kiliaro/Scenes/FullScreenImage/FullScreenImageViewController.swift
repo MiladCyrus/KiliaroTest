@@ -92,6 +92,7 @@ class FullScreenImageViewController: UIViewController, FullScreenImageDisplayLog
   // MARK: Do something
   
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     func setupUI() {
@@ -100,10 +101,21 @@ class FullScreenImageViewController: UIViewController, FullScreenImageDisplayLog
         self.image.sd_setImage(with: URL(string: media.thumbnailUrl)!, placeholderImage: placeHolder, completed: {[weak self] _,_,_,_ in
             self?.activityView.stopAnimating()
         })
+        
+        scrollView.contentSize = image.frame.size
+        scrollView.minimumZoomScale = 1
+        scrollView.maximumZoomScale = 5.0
     }
   
   func displaySomething(viewModel: FullScreenImage.Something.ViewModel)
   {
     //nameTextField.text = viewModel.name
   }
+}
+
+
+extension FullScreenImageViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.image
+    }
 }
