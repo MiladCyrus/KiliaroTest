@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11AEB97527640D0D00EC9200 /* SharedMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEB97427640D0D00EC9200 /* SharedMedia.swift */; };
+		11AEB9782764F77E00EC9200 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEB9772764F77E00EC9200 /* APIHelper.swift */; };
+		11AEB97A2764F7B300EC9200 /* RequestUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEB9792764F7B300EC9200 /* RequestUrls.swift */; };
+		11AEB97C2764FB3200EC9200 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEB97B2764FB3200EC9200 /* BaseUrl.swift */; };
+		11AEB98027650EC800EC9200 /* ThumbnailResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEB97E27650C5600EC9200 /* ThumbnailResizer.swift */; };
 		11B2169A27639D510063665A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2169927639D510063665A /* AppDelegate.swift */; };
 		11B2169C27639D510063665A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2169B27639D510063665A /* SceneDelegate.swift */; };
 		11B216A327639D520063665A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B216A227639D520063665A /* Assets.xcassets */; };
@@ -52,6 +57,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11AEB97427640D0D00EC9200 /* SharedMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedMedia.swift; sourceTree = "<group>"; };
+		11AEB9772764F77E00EC9200 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		11AEB9792764F7B300EC9200 /* RequestUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestUrls.swift; sourceTree = "<group>"; };
+		11AEB97B2764FB3200EC9200 /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
+		11AEB97E27650C5600EC9200 /* ThumbnailResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailResizer.swift; sourceTree = "<group>"; };
 		11B2169627639D510063665A /* Kiliaro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiliaro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B2169927639D510063665A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11B2169B27639D510063665A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +127,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11AEB97327640CEC00EC9200 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11AEB97427640D0D00EC9200 /* SharedMedia.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11AEB9762764F6D900EC9200 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				11AEB9772764F77E00EC9200 /* APIHelper.swift */,
+				11AEB9792764F7B300EC9200 /* RequestUrls.swift */,
+				11AEB97B2764FB3200EC9200 /* BaseUrl.swift */,
+				11AEB97E27650C5600EC9200 /* ThumbnailResizer.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		11AEB97D2765048D00EC9200 /* ProjectFiles */ = {
+			isa = PBXGroup;
+			children = (
+				11B2169927639D510063665A /* AppDelegate.swift */,
+				11B2169B27639D510063665A /* SceneDelegate.swift */,
+				11B216A227639D520063665A /* Assets.xcassets */,
+				11B216A427639D520063665A /* LaunchScreen.storyboard */,
+			);
+			path = ProjectFiles;
+			sourceTree = "<group>";
+		};
 		11B2168D27639D510063665A = {
 			isa = PBXGroup;
 			children = (
@@ -142,11 +182,10 @@
 		11B2169827639D510063665A /* Kiliaro */ = {
 			isa = PBXGroup;
 			children = (
+				11AEB9762764F6D900EC9200 /* Network */,
+				11AEB97327640CEC00EC9200 /* Models */,
 				11B216C927639EA70063665A /* Scenes */,
-				11B2169927639D510063665A /* AppDelegate.swift */,
-				11B2169B27639D510063665A /* SceneDelegate.swift */,
-				11B216A227639D520063665A /* Assets.xcassets */,
-				11B216A427639D520063665A /* LaunchScreen.storyboard */,
+				11AEB97D2765048D00EC9200 /* ProjectFiles */,
 				11B216A727639D520063665A /* Info.plist */,
 			);
 			path = Kiliaro;
@@ -225,7 +264,6 @@
 				47539F0C6C42DB25BAD9164B /* Pods-KiliaroTests.debug.xcconfig */,
 				544A151CEE9126D1225DEDCB /* Pods-KiliaroTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -482,12 +520,17 @@
 				11B216D527639EFC0063665A /* MainViewController.swift in Sources */,
 				11B216E32763E33E0063665A /* FullScreenImagePresenter.swift in Sources */,
 				11B216D327639EFC0063665A /* MainRouter.swift in Sources */,
+				11AEB97527640D0D00EC9200 /* SharedMedia.swift in Sources */,
 				11B216E42763E33E0063665A /* FullScreenImageWorker.swift in Sources */,
+				11AEB97C2764FB3200EC9200 /* BaseUrl.swift in Sources */,
 				11B216DB2763E1220063665A /* ImageCell.swift in Sources */,
 				11B2169A27639D510063665A /* AppDelegate.swift in Sources */,
 				11B216D427639EFC0063665A /* MainModels.swift in Sources */,
+				11AEB9782764F77E00EC9200 /* APIHelper.swift in Sources */,
+				11AEB97A2764F7B300EC9200 /* RequestUrls.swift in Sources */,
 				11B216D127639EFC0063665A /* MainPresenter.swift in Sources */,
 				11B216D227639EFC0063665A /* MainWorker.swift in Sources */,
+				11AEB98027650EC800EC9200 /* ThumbnailResizer.swift in Sources */,
 				11B216E62763E33E0063665A /* FullScreenImageModels.swift in Sources */,
 				11B216E82763E33E0063665A /* FullScreenImageInteractor.swift in Sources */,
 				11B216E52763E33E0063665A /* FullScreenImageRouter.swift in Sources */,

@@ -17,4 +17,10 @@ class MainWorker
   func doSomeWork()
   {
   }
+    
+    func getSHaredMedia() {
+        APIHelper().makeGetRequest(uri: RequestUrls().getSharedMedia) { response in
+            print(response)
+        }
+    }
 }
