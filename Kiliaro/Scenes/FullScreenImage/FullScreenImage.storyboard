@@ -40,13 +40,17 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="IBS-dE-2zc"/>
                                 </connections>
                             </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientStyle" translatesAutoresizingMaskIntoConstraints="NO" id="HF1-y8-ETh">
+                                <rect key="frame" x="0.0" y="627" width="414" height="269"/>
+                                <color key="tintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="0.69875310430000004" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohC-qF-Plg">
                                 <rect key="frame" x="0.0" y="822" width="414" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created_at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eJ-1I-WKb">
                                         <rect key="frame" x="8" y="0.0" width="398" height="40"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -66,15 +70,19 @@
                         <viewLayoutGuide key="safeArea" id="pCy-B3-U5s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="HF1-y8-ETh" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.3" id="49K-V1-lia"/>
                             <constraint firstItem="ohC-qF-Plg" firstAttribute="bottom" secondItem="pCy-B3-U5s" secondAttribute="bottom" id="EbT-AW-cSf"/>
+                            <constraint firstItem="HF1-y8-ETh" firstAttribute="leading" secondItem="pCy-B3-U5s" secondAttribute="leading" id="GKS-vk-a5U"/>
                             <constraint firstItem="wv2-c3-Rsv" firstAttribute="top" secondItem="pCy-B3-U5s" secondAttribute="top" id="Ql9-st-7jf"/>
                             <constraint firstItem="ohC-qF-Plg" firstAttribute="trailing" secondItem="pCy-B3-U5s" secondAttribute="trailing" id="U9z-CO-nr8"/>
                             <constraint firstItem="ohC-qF-Plg" firstAttribute="leading" secondItem="pCy-B3-U5s" secondAttribute="leading" id="WaZ-PF-mk6"/>
+                            <constraint firstItem="HF1-y8-ETh" firstAttribute="trailing" secondItem="pCy-B3-U5s" secondAttribute="trailing" id="Wbq-Oj-BZW"/>
                             <constraint firstItem="jho-0r-ePt" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="dIw-Iq-Lcc"/>
                             <constraint firstItem="wv2-c3-Rsv" firstAttribute="bottom" secondItem="pCy-B3-U5s" secondAttribute="bottom" id="ila-dG-pmV"/>
                             <constraint firstItem="wv2-c3-Rsv" firstAttribute="leading" secondItem="pCy-B3-U5s" secondAttribute="leading" id="n8V-Yc-uCl"/>
                             <constraint firstItem="wv2-c3-Rsv" firstAttribute="trailing" secondItem="pCy-B3-U5s" secondAttribute="trailing" id="odj-zm-cdh"/>
                             <constraint firstItem="jho-0r-ePt" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="waS-Vu-rFC"/>
+                            <constraint firstAttribute="bottom" secondItem="HF1-y8-ETh" secondAttribute="bottom" id="yCn-96-yzV"/>
                         </constraints>
                     </view>
                     <userDefinedRuntimeAttributes>
@@ -93,6 +101,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gradientStyle" width="537" height="136"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
