@@ -69,7 +69,7 @@ class FullScreenImageViewController: UIViewController, FullScreenImageDisplayLog
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
+    setupUI()
       
   }
     override func viewDidAppear(_ animated: Bool) {
@@ -91,13 +91,12 @@ class FullScreenImageViewController: UIViewController, FullScreenImageDisplayLog
   
   // MARK: Do something
   
-  //@IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var image: UIImageView!
   
-  func doSomething()
-  {
-    let request = FullScreenImage.Something.Request()
-    interactor?.doSomething(request: request)
-  }
+    func setupUI() {
+        guard let media = router?.dataStore?.media else { fatalError()}
+        self.image.sd_setImage(with: URL(string: media.thumbnailUrl)!, placeholderImage: nil, completed: nil)
+    }
   
   func displaySomething(viewModel: FullScreenImage.Something.ViewModel)
   {

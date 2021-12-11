@@ -16,6 +16,7 @@ import Hero
 protocol MainDisplayLogic: class
 {
     func displaySharedMedia(viewModel: MainModel.SharedMediaModel.ViewModel)
+    func displayDataPassing(media: SharedMedia)
 }
 
 class MainViewController: UIViewController, MainDisplayLogic
@@ -109,6 +110,10 @@ class MainViewController: UIViewController, MainDisplayLogic
             self.collectionView.reloadData()
         }
     }
+    
+    func displayDataPassing(media: SharedMedia) {
+        router?.routToFullScreen()
+    }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -134,6 +139,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ImageCell
         cell.image.hero.id = "1"
-        router?.routToFullScreen()
+        let media = sharedMedias[indexPath.row]
+        interactor?.setDataStore(media: media)
     }
 }

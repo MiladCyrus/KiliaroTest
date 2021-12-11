@@ -15,6 +15,7 @@ import UIKit
 protocol MainPresentationLogic
 {
     func presentSharedMedia(response: MainModel.SharedMediaModel.Response)
+    func presentRouting(media: SharedMedia)
 }
 
 class MainPresenter: MainPresentationLogic
@@ -26,5 +27,8 @@ class MainPresenter: MainPresentationLogic
     func presentSharedMedia(response: MainModel.SharedMediaModel.Response) {
         let viewModel = MainModel.SharedMediaModel.ViewModel(result: response.result)
         viewController?.displaySharedMedia(viewModel: viewModel)
+    }
+    func presentRouting(media: SharedMedia) {
+        viewController?.displayDataPassing(media: media)
     }
 }

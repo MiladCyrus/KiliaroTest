@@ -15,18 +15,19 @@ import UIKit
 protocol MainBusinessLogic
 {
     func getSharedMedia(request: MainModel.SharedMediaModel.Request)
+    func setDataStore(media: SharedMedia)
 }
 
 protocol MainDataStore
 {
-  var name: String { get set }
+  var media: SharedMedia? { get set }
 }
 
 class MainInteractor: MainBusinessLogic, MainDataStore
 {
   var presenter: MainPresentationLogic?
   var worker: MainWorker?
-  var name: String = ""
+  var media: SharedMedia?
   
   // MARK: Do something
   
@@ -35,6 +36,10 @@ class MainInteractor: MainBusinessLogic, MainDataStore
         worker?.getSharedMedia(request: request, completion: {[weak self] response in
             self?.presenter?.presentSharedMedia(response: response)
         })
+    }
+    func setDataStore(media: SharedMedia) {
+        self.media = media
+        presenter?.presentRouting(media: media)
     }
   
 }

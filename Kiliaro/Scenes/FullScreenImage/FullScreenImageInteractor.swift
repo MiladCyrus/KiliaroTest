@@ -19,15 +19,15 @@ protocol FullScreenImageBusinessLogic
 
 protocol FullScreenImageDataStore
 {
-  var name: String { get set }
+  var media: SharedMedia? { get set }
 }
 
 class FullScreenImageInteractor: FullScreenImageBusinessLogic, FullScreenImageDataStore
 {
   var presenter: FullScreenImagePresentationLogic?
   var worker: FullScreenImageWorker?
-  var name: String = ""
-  
+  var media: SharedMedia?
+    
   // MARK: Do something
   
   func doSomething(request: FullScreenImage.Something.Request)
