@@ -15,7 +15,7 @@ import Hero
 
 protocol MainDisplayLogic: class
 {
-  func displaySomething(viewModel: Main.Something.ViewModel)
+    func displaySharedMedia(viewModel: MainModel.SharedMediaModel.ViewModel)
 }
 
 class MainViewController: UIViewController, MainDisplayLogic
@@ -70,16 +70,19 @@ class MainViewController: UIViewController, MainDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
       
+      // setup collection view layout
       let layout: UICollectionViewFlowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
       layout.sectionInset = UIEdgeInsets(top: 0, left: spaceBeweenColumns, bottom: 0, right: spaceBeweenColumns)
       layout.minimumLineSpacing = spaceBeweenColumns
+      
+      getSharedMedia()
   }
   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // invalidate hero ID in back transition
         let cells = collectionView.visibleCells
         cells.forEach({cell in
             let imageCell = cell as! ImageCell
@@ -88,31 +91,36 @@ class MainViewController: UIViewController, MainDisplayLogic
     }
   // MARK: Do something
   
+    @IBOutlet weak var collectionView: UICollectionView!
+  
     let spaceBeweenColumns = 4.0
     let totalColumns = 3.0
-    
-    @IBOutlet weak var collectionView: UICollectionView!
+    var sharedMedias: [SharedMedia] = []
     
   
-  func doSomething()
-  {
-    let request = Main.Something.Request()
-    interactor?.doSomething(request: request)
-  }
+    func getSharedMedia() {
+        let request = MainModel.SharedMediaModel.Request(offset: 0, limit: 20)
+        interactor?.getSharedMedia(request: request)
+    }
   
-  func displaySomething(viewModel: Main.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    func displaySharedMedia(viewModel: MainModel.SharedMediaModel.ViewModel) {
+        sharedMedias = viewModel.result
+        Utilities.UI {
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 34
+        return sharedMedias.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "CellId", for: indexPath)
+        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "CellId", for: indexPath) as! ImageCell
+        let media = sharedMedias[indexPath.row]
+        cell.config(media: media)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

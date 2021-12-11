@@ -14,13 +14,16 @@ import UIKit
 
 class MainWorker
 {
-  func doSomeWork()
-  {
-  }
-    
-    func getSHaredMedia() {
-        APIHelper().makeGetRequest(uri: RequestUrls().getSharedMedia) { response in
-            print(response)
+
+    func getSharedMedia(request: MainModel.SharedMediaModel.Request, completion: @escaping (MainModel.SharedMediaModel.Response) -> Void) {
+        APIHelper().makeGetRequest(uri: RequestUrls().getSharedMedia, pagination: Pagination(offset: request.offset, limit: request.limit)) { response in
+            do {
+                let res = try JSONDecoder().decode([SharedMedia].self, from: response)
+                let responseModel = MainModel.SharedMediaModel.Response(result: res)
+                completion(responseModel)
+            } catch  {
+                print(error)
+            }
         }
     }
 }

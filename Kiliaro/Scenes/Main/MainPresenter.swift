@@ -14,7 +14,7 @@ import UIKit
 
 protocol MainPresentationLogic
 {
-  func presentSomething(response: Main.Something.Response)
+    func presentSharedMedia(response: MainModel.SharedMediaModel.Response)
 }
 
 class MainPresenter: MainPresentationLogic
@@ -23,9 +23,8 @@ class MainPresenter: MainPresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: Main.Something.Response)
-  {
-    let viewModel = Main.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    func presentSharedMedia(response: MainModel.SharedMediaModel.Response) {
+        let viewModel = MainModel.SharedMediaModel.ViewModel(result: response.result)
+        viewController?.displaySharedMedia(viewModel: viewModel)
+    }
 }

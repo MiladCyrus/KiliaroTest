@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ImageCell: UICollectionViewCell {
     
@@ -18,7 +19,10 @@ class ImageCell: UICollectionViewCell {
         self.layer.cornerRadius = 4
     }
     
-    func config() {
-    
+    func config(media: SharedMedia) {
+        let imageUrl = media.thumbnailUrl + ThumbnailResizer().makeParameters(param: ImageResizer(w: Int(self.bounds.width), h: Int(self.bounds.height), m: .cropped))
+        
+        self.image.sd_setImage(with: URL(string: imageUrl), placeholderImage: nil, completed: nil)
+        
     }
 }

@@ -12,20 +12,24 @@
 
 import UIKit
 
-enum Main
+enum MainModel
 {
   // MARK: Use cases
   
-  enum Something
+  enum SharedMediaModel
   {
     struct Request
     {
+        let offset: Int
+        let limit: Int
     }
     struct Response
     {
+        let result: [SharedMedia]
     }
     struct ViewModel
     {
+        let result: [SharedMedia]
     }
   }
 }
