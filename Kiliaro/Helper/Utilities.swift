@@ -17,4 +17,12 @@ class Utilities: NSObject {
         DispatchQueue.main.async(execute: block)
     }
     
+    public static func bytesToMegabytes(bytes: Int) -> String {
+        let kb = Double(bytes/1024)
+        let mb = kb / 1024
+        //let gb = mb / 1024
+        
+        return "\(String(format: "%.2f", mb)) MB"
+    }
+    
 }

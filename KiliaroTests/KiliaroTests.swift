@@ -30,5 +30,9 @@ class KiliaroTests: XCTestCase {
                  
             }
     }
+    
+    func testUtilities_bytesToMegabytes() {
+        
+    }
 
 }

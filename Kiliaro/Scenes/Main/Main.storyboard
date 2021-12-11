@@ -76,6 +76,7 @@
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                         <connections>
                                             <outlet property="image" destination="zgP-WE-MqM" id="k4R-cS-P7G"/>
+                                            <outlet property="sizeLabel" destination="gQk-7y-eVa" id="v4i-0q-21K"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
