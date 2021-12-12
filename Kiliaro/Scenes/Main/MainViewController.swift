@@ -102,12 +102,11 @@ class MainViewController: UIViewController, MainDisplayLogic
   
     func addRefreshControl() {
         Utilities.UI {
-        self.collectionView.refreshControl = UIRefreshControl()
-            self.collectionView.refreshControl?.addTarget(self, action: #selector(self.PullToRefresh), for: .valueChanged)
+            self.collectionView.refreshControl = UIRefreshControl()
+            self.collectionView.refreshControl?.addTarget(self, action: #selector(self.pullToRefresh), for: .valueChanged)
         }
     }
-    @objc func PullToRefresh(){
-        self.extendedLayoutIncludesOpaqueBars = true
+    @objc func pullToRefresh(){
         self.collectionView.refreshControl?.beginRefreshing()
         self.getSharedMedia()
     }
