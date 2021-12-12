@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113E0595276643A80065D73D /* DBLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113E0594276643A80065D73D /* DBLayer.swift */; };
 		11AEB97527640D0D00EC9200 /* SharedMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEB97427640D0D00EC9200 /* SharedMedia.swift */; };
 		11AEB9782764F77E00EC9200 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEB9772764F77E00EC9200 /* APIHelper.swift */; };
 		11AEB97A2764F7B300EC9200 /* RequestUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEB9792764F7B300EC9200 /* RequestUrls.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		113E0594276643A80065D73D /* DBLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBLayer.swift; sourceTree = "<group>"; };
 		11AEB97427640D0D00EC9200 /* SharedMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedMedia.swift; sourceTree = "<group>"; };
 		11AEB9772764F77E00EC9200 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		11AEB9792764F7B300EC9200 /* RequestUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestUrls.swift; sourceTree = "<group>"; };
@@ -129,6 +131,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113E0593276643940065D73D /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				113E0594276643A80065D73D /* DBLayer.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		11AEB97327640CEC00EC9200 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +202,7 @@
 		11B2169827639D510063665A /* Kiliaro */ = {
 			isa = PBXGroup;
 			children = (
+				113E0593276643940065D73D /* Database */,
 				11AEB98127651FB100EC9200 /* Helper */,
 				11AEB9762764F6D900EC9200 /* Network */,
 				11AEB97327640CEC00EC9200 /* Models */,
@@ -547,6 +558,7 @@
 				11B216E82763E33E0063665A /* FullScreenImageInteractor.swift in Sources */,
 				11B216E52763E33E0063665A /* FullScreenImageRouter.swift in Sources */,
 				11B216E72763E33E0063665A /* FullScreenImageViewController.swift in Sources */,
+				113E0595276643A80065D73D /* DBLayer.swift in Sources */,
 				11B2169C27639D510063665A /* SceneDelegate.swift in Sources */,
 				11B216D627639EFC0063665A /* MainInteractor.swift in Sources */,
 			);

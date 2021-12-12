@@ -5,8 +5,31 @@
 //  Created by Milad on 9/20/1400 AP.
 //
 
-import Foundation
 import UIKit
+import RealmSwift
+
+// MARK: - Realm Object to Save
+class SharedMediaRealmObj: Object {
+    
+    @objc dynamic var id: Int = -1
+    @objc private dynamic var structData:Data? = nil
+    
+    var sharedMediaStruct : [SharedMedia]? {
+        get {
+            if let data = structData {
+                return try! JSONDecoder().decode([SharedMedia].self, from: data)
+            }
+            return nil
+        }
+        set {
+            structData = try? JSONEncoder().encode(newValue)
+        }
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+}
 
 // MARK: - SharedMedia
 struct SharedMedia: Codable {

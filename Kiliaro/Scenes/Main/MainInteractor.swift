@@ -34,8 +34,30 @@ class MainInteractor: MainBusinessLogic, MainDataStore
   // MARK: Do something
   
     func getSharedMedia(request: MainModel.SharedMediaModel.Request) {
+        
+        // Check if data is already in database
+        if let realmObject = DBLayer().getObjects(type: SharedMediaRealmObj.self).first as? SharedMediaRealmObj {
+            if let sharedMedia = realmObject.sharedMediaStruct {
+                let response = MainModel.SharedMediaModel.Response(result: sharedMedia)
+                self.presenter?.presentSharedMedia(response: response)
+                return
+            }
+        }
+       
+       // Get data from server
         worker = MainWorker()
         worker?.getSharedMedia(request: request, completion: {[weak self] response in
+            
+            // save to database
+            Utilities.RealmThread {
+                let sharedMedias = response.result
+                let realmObject = SharedMediaRealmObj()
+                realmObject.sharedMediaStruct = sharedMedias
+                // always 0 because we want to update everytime
+                realmObject.id = 0
+                DBLayer().updateObject(obj: realmObject)
+            }
+            
             self?.presenter?.presentSharedMedia(response: response)
         })
     }

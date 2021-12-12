@@ -107,8 +107,14 @@ class MainViewController: UIViewController, MainDisplayLogic
         }
     }
     @objc func pullToRefresh(){
-        self.collectionView.refreshControl?.beginRefreshing()
-        self.getSharedMedia()
+        Utilities.RealmThread {
+            let db = DBLayer()
+            if let realmObject = db.getObjects(type: SharedMediaRealmObj.self).first {
+                DBLayer().removeObject(obj: realmObject)
+                self.getSharedMedia()
+                Utilities.UI { self.collectionView.refreshControl?.beginRefreshing() }
+            }
+        }
     }
     
     func getSharedMedia() {
