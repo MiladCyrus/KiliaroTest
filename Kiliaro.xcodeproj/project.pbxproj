@@ -67,8 +67,6 @@
 		11B216A527639D520063665A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11B216A727639D520063665A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11B216AC27639D520063665A /* KiliaroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KiliaroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		11B216BA27639D520063665A /* KiliaroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiliaroUITests.swift; sourceTree = "<group>"; };
-		11B216BC27639D520063665A /* KiliaroUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiliaroUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		11B216CB27639EFC0063665A /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		11B216CC27639EFC0063665A /* MainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
 		11B216CD27639EFC0063665A /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 			children = (
 				11B2169827639D510063665A /* Kiliaro */,
 				11B216AF27639D520063665A /* KiliaroTests */,
-				11B216B927639D520063665A /* KiliaroUITests */,
 				11B2169727639D510063665A /* Products */,
 				678D18B2A80A21A6CC50B2FC /* Pods */,
 				D1339D7D81DC7030AA6B8070 /* Frameworks */,
@@ -211,15 +208,6 @@
 				11F41CAF2766A8830005076E /* URLsTests.swift */,
 			);
 			path = KiliaroTests;
-			sourceTree = "<group>";
-		};
-		11B216B927639D520063665A /* KiliaroUITests */ = {
-			isa = PBXGroup;
-			children = (
-				11B216BA27639D520063665A /* KiliaroUITests.swift */,
-				11B216BC27639D520063665A /* KiliaroUITestsLaunchTests.swift */,
-			);
-			path = KiliaroUITests;
 			sourceTree = "<group>";
 		};
 		11B216C927639EA70063665A /* Scenes */ = {

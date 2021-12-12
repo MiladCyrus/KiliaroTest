@@ -1,0 +1,36 @@
+PODS:
+  - Hero (1.6.1)
+  - Realm (10.20.0):
+    - Realm/Headers (= 10.20.0)
+  - Realm/Headers (10.20.0)
+  - RealmSwift (10.20.0):
+    - Realm (= 10.20.0)
+  - SDWebImage (5.12.1):
+    - SDWebImage/Core (= 5.12.1)
+  - SDWebImage/Core (5.12.1)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - Hero
+  - RealmSwift (~> 10.20)
+  - SDWebImage (~> 5.12)
+  - Toast-Swift
+
+SPEC REPOS:
+  trunk:
+    - Hero
+    - Realm
+    - RealmSwift
+    - SDWebImage
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
+  Realm: ae32bdc1da7d19c7617e0400201a77acd4a211b9
+  RealmSwift: c95eec6a712924870b2e36c4c081d63ec07e5414
+  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 7894e8aa6d4ad00a68f039a0a05c4ccb9cd67fdc
+
+COCOAPODS: 1.11.2
