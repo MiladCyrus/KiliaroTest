@@ -19,20 +19,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ua4-0P-wUi">
-                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="810"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="428" id="BU4-p1-8iC"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eHc-DT-x8O">
                                     <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="100" height="100"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="50"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellId" id="RHw-25-d1c" customClass="ImageCell" customModule="Kiliaro" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="100" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LzK-ZH-mTI">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -40,7 +40,6 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zgP-WE-MqM">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMz-zM-skj">
                                                     <rect key="frame" x="0.0" y="108" width="128" height="20"/>
@@ -87,22 +86,22 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="loadingView" id="1uf-fk-4CU">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="loadingView" id="jOO-vJ-OQj">
+                                    <rect key="frame" x="0.0" y="128" width="390" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Contents ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryf-ou-v9O">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="ryf-ou-v9O" secondAttribute="trailing" id="28h-lO-Lte"/>
-                                        <constraint firstItem="ryf-ou-v9O" firstAttribute="top" secondItem="1uf-fk-4CU" secondAttribute="top" id="Ccx-tf-oJz"/>
-                                        <constraint firstItem="ryf-ou-v9O" firstAttribute="leading" secondItem="1uf-fk-4CU" secondAttribute="leading" id="Wny-XE-kbV"/>
-                                        <constraint firstAttribute="bottom" secondItem="ryf-ou-v9O" secondAttribute="bottom" id="orP-4U-BCq"/>
+                                        <constraint firstItem="ryf-ou-v9O" firstAttribute="top" secondItem="jOO-vJ-OQj" secondAttribute="top" id="IoT-33-jLb"/>
+                                        <constraint firstAttribute="trailing" secondItem="ryf-ou-v9O" secondAttribute="trailing" id="WG2-y9-4gi"/>
+                                        <constraint firstItem="ryf-ou-v9O" firstAttribute="leading" secondItem="jOO-vJ-OQj" secondAttribute="leading" id="prX-RS-LeE"/>
+                                        <constraint firstAttribute="bottom" secondItem="ryf-ou-v9O" secondAttribute="bottom" id="xdz-54-0KA"/>
                                     </constraints>
                                 </collectionReusableView>
                                 <connections>
@@ -116,12 +115,12 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="ua4-0P-wUi" secondAttribute="trailing" priority="750" id="3dI-f8-gUH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ua4-0P-wUi" secondAttribute="bottom" id="Gd1-TA-HaW"/>
-                            <constraint firstItem="ua4-0P-wUi" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="IR9-Hh-GmC"/>
+                            <constraint firstItem="ua4-0P-wUi" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="IR9-Hh-GmC"/>
                             <constraint firstItem="ua4-0P-wUi" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Tc2-xe-8DO"/>
                             <constraint firstItem="ua4-0P-wUi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="leading" priority="750" id="oaH-yN-6Ek"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Test album" largeTitleDisplayMode="always" id="9In-po-p4k"/>
+                    <navigationItem key="navigationItem" title="Test album" id="9In-po-p4k"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>

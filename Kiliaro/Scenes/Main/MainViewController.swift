@@ -76,7 +76,8 @@ class MainViewController: UIViewController, MainDisplayLogic
       let layout: UICollectionViewFlowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
       layout.sectionInset = UIEdgeInsets(top: 0, left: spaceBeweenColumns, bottom: 0, right: spaceBeweenColumns)
       layout.minimumLineSpacing = spaceBeweenColumns
-      
+
+      addRefreshControl()
       getSharedMedia()
   }
   
@@ -99,14 +100,27 @@ class MainViewController: UIViewController, MainDisplayLogic
     var sharedMedias: [SharedMedia] = []
     
   
+    func addRefreshControl() {
+        Utilities.UI {
+        self.collectionView.refreshControl = UIRefreshControl()
+            self.collectionView.refreshControl?.addTarget(self, action: #selector(self.PullToRefresh), for: .valueChanged)
+        }
+    }
+    @objc func PullToRefresh(){
+        self.extendedLayoutIncludesOpaqueBars = true
+        self.collectionView.refreshControl?.beginRefreshing()
+        self.getSharedMedia()
+    }
+    
     func getSharedMedia() {
-        let request = MainModel.SharedMediaModel.Request(offset: 0, limit: 20)
+        let request = MainModel.SharedMediaModel.Request(offset: 0, limit: 21)
         interactor?.getSharedMedia(request: request)
     }
   
     func displaySharedMedia(viewModel: MainModel.SharedMediaModel.ViewModel) {
         sharedMedias = viewModel.result
         Utilities.UI {
+            self.collectionView.refreshControl?.endRefreshing()
             self.collectionView.reloadData()
         }
     }
@@ -144,16 +158,16 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         interactor?.setDataStore(media: media, placeHolder: placeHolderImgae)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         if self.sharedMedias.count > 0 {
             return .zero
         }
-        
+
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height / 2.0)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "loadingView", for: indexPath)
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "loadingView", for: indexPath)
         return view
     }
     
