@@ -10,10 +10,10 @@ target 'Kiliaro' do
   pod 'RealmSwift', '~> 10.20'
   pod 'Toast-Swift'
 
-#  target 'KiliaroTests' do
-#    inherit! :search_paths
-#    # Pods for testing
-#  end
+  target 'KiliaroTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 #
 #  target 'KiliaroUITests' do
 #    # Pods for testing
