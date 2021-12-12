@@ -143,4 +143,19 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let media = sharedMedias[indexPath.row]
         interactor?.setDataStore(media: media, placeHolder: placeHolderImgae)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if self.sharedMedias.count > 0 {
+            return .zero
+        }
+        
+        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height / 2.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "loadingView", for: indexPath)
+        return view
+    }
+    
+    
 }
