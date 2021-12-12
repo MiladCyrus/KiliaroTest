@@ -8,6 +8,7 @@ target 'Kiliaro' do
   pod 'SDWebImage', '~> 5.12'
   pod 'Hero'
   pod 'RealmSwift', '~> 10.20'
+  pod 'Toast-Swift'
 
   target 'KiliaroTests' do
     inherit! :search_paths
