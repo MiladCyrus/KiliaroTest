@@ -26,7 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      systemAttachmentLifetime = "keepNever"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,16 +37,6 @@
                BlueprintIdentifier = "11B216AB27639D520063665A"
                BuildableName = "KiliaroTests.xctest"
                BlueprintName = "KiliaroTests"
-               ReferencedContainer = "container:Kiliaro.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "11B216B527639D520063665A"
-               BuildableName = "KiliaroUITests.xctest"
-               BlueprintName = "KiliaroUITests"
                ReferencedContainer = "container:Kiliaro.xcodeproj">
             </BuildableReference>
          </TestableReference>
